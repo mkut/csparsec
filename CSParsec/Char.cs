@@ -39,7 +39,7 @@ namespace CSParsec
 
 		public static Parser<char> AlphaNum()
 		{
-			return Letter().Or(Letter());
+			return Letter().Or(Digit());
 		}
 
 		public static Parser<char> Letter()
