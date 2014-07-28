@@ -18,9 +18,9 @@ namespace CSParsec
 		}
 		public StringInput(string source, int pos, int line, int column, bool prevCr)
 		{
-			bool newLine = prevCr && (AtEnd || Current != '\n');
 			this.source = source;
 			this.pos = pos;
+			bool newLine = prevCr && (AtEnd || Current != '\n');
 			this.line = newLine ? line + 1 : line;
 			this.column = newLine ? 0 : column;
 		}
