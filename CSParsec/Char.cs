@@ -104,6 +104,17 @@ namespace CSParsec
 				};
 		}
 
+		// --- --- --- //
+
+		public static Parser<char> CharacterIgnoreCase(char c)
+		{
+			return Satisfy(cc => System.Char.ToLower(c) == System.Char.ToLower(cc));
+		}
+
+		public static Parser<IEnumerable<char>> StringIgnoreCase(string str)
+		{
+			return str.Select(c => CharacterIgnoreCase(c)).Sequence();
+		}
 
 		public static Parser<IEnumerable<char>> GenericNewline()
 		{
